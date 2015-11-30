@@ -1,5 +1,26 @@
-%ul.list-group.list-group-flush
-  -project.tasks.each do |t|
-    %li.list-group-item.text-left
-      %a{:href=>task_path(t)}
+%ul.list-group
+  - @project.tasks.order(updated_at: :desc).each do |t|
+    -if t.completed?
+      %a.list-group-item.item-success{:href => task_path(t)}
         =t.name
+        %small.text-muted
+          Last Updated: 
+          = time_ago_in_words(t.updated_at)
+          ago
+        %span.label.label-pill.label-success.pull-right Done
+    -elsif t.overdue?
+      %a.list-group-item.item-danger{:href => task_path(t)}
+        =t.name
+        %small.text-muted
+          Last Updated: 
+          = time_ago_in_words(t.updated_at)
+          ago
+        %span.label.label-pill.label-alert.pull-right OVERDUE!
+    -else
+      %a.list-group-item.item-warning{:href => task_path(t)}
+        =t.name
+        %small.text-muted
+          Last Updated: 
+          = time_ago_in_words(t.updated_at)
+          ago
+        %span.label.label-pill.label-warning.pull-right You should get on it!

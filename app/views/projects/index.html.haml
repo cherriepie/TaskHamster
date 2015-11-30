@@ -1,31 +1,21 @@
 .row
   %p#notice= notice
-.row  
-  %h4 Projects
 .row
-  - @projects.each do |project|
-    .card.text-center.project-card
-      .card-header
-        %a.icon.icon-eye.pull-right{:href => project_path(project)}
-        =project.name
-      %ul.list-group.list-group-flush
-        -project.tasks.each do |t|
-          -if t.completed?
-            %li.list-group-item.item-success.alert-success.text-left
-              %a.alert-link{:href=>task_path(t)}=t.name
-              %span.icon.icon-check.success.pull-right
-          -else
-            %li.list-group-item.item-warning.text-left
-              %a.alert-link{:href=>task_path(t)}
-                =t.name
-              = link_to(complete_task_path(t), method: :patch) do
-                .icon.icon-emoji-happy.complete-task.alert-link.pull-right
-      %p= project.status
-      .card-footer.text-muted
-        %p.card-text
-          %small.text-muted        
-            Last updated:
-            = time_ago_in_words(project.updated_at)
-            ago, 
-            = project.updated_at.strftime("%A")
-            
+  %button.btn.btn-primary{:onclick=> "switchView()"} Switch View
+.row#v1
+  =render 'card_view_v1'
+.row#v2{:style=>"display:none;"}
+  =render 'card_view_v2'
+
+
+:javascript
+  function switchView(){
+  	if ($('#v1').is(":visible") == true){
+      $('#v1').hide();
+      $('#v2').show();
+    }
+    else{
+      $('#v1').show();
+      $('#v2').hide();
+    }     
+  }

@@ -1,10 +1,15 @@
 %p#notice= notice
-%p
-  %strong Name:
-  = @project.name
-%p
-  %strong Status:
-  = @project.status
+.row
+  .pull-left
+    = link_to(projects_path) do
+      .icon.icon-arrow-bold-left.pull-right to All Projects
+
+%h3.text-center=@project.name
+%h5 Tasks
+=render 'project_tasks'
+
+
 = link_to 'Edit', edit_project_path(@project)      
 = link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' }
-= link_to 'Back', projects_path
+
+

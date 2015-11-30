@@ -21,5 +21,10 @@ body{
 	color: #8a6d3b;
     background-color: #fcf8e3;
     border-color: #faf2cc;
+}
 
+.list-group-item.item-danger{
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebcccc;
 }

@@ -1,0 +1,39 @@
+%h3 This is V1!
+- @projects.each do |project|
+  .card.text-center.project-card
+    .card-header
+      %a{:href => project_path(project)}
+        =project.name
+    %ul.list-group.list-group-flush
+      -if project.tasks.present?
+        -project.tasks.each do |t|
+          -if t.completed?
+            %li.list-group-item.item-success.alert-success.text-left
+              %a.alert-link{:href=>task_path(t)}=t.name
+              %span.icon.icon-check.pull-right
+          -elsif t.overdue?
+            %li.list-group-item.item-danger.alert-danger.text-left
+              %a.alert-link{:href=>task_path(t)}=t.name
+              = link_to(complete_task_path(t), method: :patch) do
+                .icon.icon-emoji-happy.complete-task.alert-link.pull-right
+              %p.card-text
+                %small.text-muted
+                  Due 
+                  = time_ago_in_words(t.deadline)
+                  ago
+          -else
+            %li.list-group-item.item-warning.text-left
+              %a.alert-link{:href=>task_path(t)}
+                =t.name
+              = link_to(complete_task_path(t), method: :patch) do
+                .icon.icon-emoji-happy.complete-task.alert-link.pull-right
+      -else 
+        No tasks have been created!
+    .card-footer.text-muted
+      %p.card-text
+        %small.text-muted        
+          Last updated:
+          = time_ago_in_words(project.updated_at)
+          ago, 
+          = project.updated_at.strftime("%A")
+          
