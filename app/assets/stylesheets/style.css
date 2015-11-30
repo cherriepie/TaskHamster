@@ -1,6 +1,6 @@
 body{
 	background-color: #f7f7f9;
-	padding-top: 50px;
+	padding-top: 61px;
 }
 
 a, a:hover{
@@ -8,6 +8,14 @@ a, a:hover{
 }
 
 a.icon{
+    cursor: -webkit-grab;
+}
+
+a.about {
+    /*position: relative;
+    float: right;
+    padding:0.5rem 1rem;*/
+    color: rgba(0,0,0,0.3);
     cursor: -webkit-grab;
 }
 
@@ -35,4 +43,8 @@ a.icon{
     color: #a94442;
     background-color: #f2dede;
     border-color: #ebcccc;
+}
+
+.nav-white{
+    background-color:white;
 }
