@@ -37,6 +37,9 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
+    autoprefixer-rails (6.1.1)
+      execjs
+      json
     bcrypt (3.1.10)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -44,6 +47,9 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap (4.0.0.alpha2)
+      autoprefixer-rails (>= 6.0.3)
+      sass (>= 3.4.19)
     bootstrap-datepicker-rails (1.5.0)
       railties (>= 3.0)
     bootstrap-select-wrapper-rails (1.6.3)
@@ -71,6 +77,11 @@ GEM
     execjs (2.6.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    gridstack-js-rails (0.2.3)
+      jquery-rails (>= 3.0.5)
+      jquery-ui-rails (>= 5.0.0)
+      lodash-rails (>= 3.5.0)
+      underscore-rails (>= 1.7.0)
     haml (4.0.7)
       tilt
     handlebars_assets (0.19.1)
@@ -80,6 +91,11 @@ GEM
       tilt
     has_secure_token (1.0.0)
       activerecord (>= 3.0)
+    html2haml (2.0.0)
+      erubis (~> 2.7.0)
+      haml (~> 4.0.0)
+      nokogiri (~> 1.6.0)
+      ruby_parser (~> 3.5)
     i18n (0.7.0)
     jbuilder (2.3.2)
       activesupport (>= 3.0.0, < 5)
@@ -88,7 +104,11 @@ GEM
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (5.0.5)
+      railties (>= 3.2.16)
     json (1.8.3)
+    lodash-rails (3.10.1)
+      railties (>= 3.1)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -145,6 +165,8 @@ GEM
     rdoc (4.2.0)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
+    ruby_parser (3.7.2)
+      sexp_processor (~> 4.1)
     sass (3.4.19)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -155,6 +177,7 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    sexp_processor (4.6.0)
     simple_form (3.2.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
@@ -179,6 +202,7 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    underscore-rails (1.8.3)
     warden (1.2.3)
       rack (>= 1.0)
     web-console (2.2.1)
@@ -193,6 +217,7 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   binding_of_caller
+  bootstrap (~> 4.0.0.alpha1)
   bootstrap-datepicker-rails
   bootstrap-select-wrapper-rails (~> 1.6.3)
   byebug
@@ -200,11 +225,14 @@ DEPENDENCIES
   cocoon
   coffee-rails (~> 4.1.0)
   devise
+  gridstack-js-rails
   haml
   handlebars_assets
   has_secure_token
+  html2haml
   jbuilder (~> 2.0)
   jquery-rails
+  jquery-ui-rails
   mail_form
   mysql2 (>= 0.3.13, < 0.5)
   public_activity

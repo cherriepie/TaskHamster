@@ -1,0 +1,5 @@
+%ul.list-group.list-group-flush
+  -project.tasks.each do |t|
+    %li.list-group-item.text-left
+      %a{:href=>task_path(t)}
+        =t.name

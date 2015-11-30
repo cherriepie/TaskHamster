@@ -35,6 +35,8 @@ gem 'devise'
 gem 'simple_form'
 gem 'rails_12factor', group: :production
 
+gem 'bootstrap', '~> 4.0.0.alpha1'
+
 gem 'bootstrap-select-wrapper-rails', '~> 1.6.3'
 gem 'bootstrap-datepicker-rails'
 gem 'twitter-typeahead-rails'
@@ -42,11 +44,15 @@ gem 'handlebars_assets'
 
 gem 'haml'
 gem 'has_secure_token'
-gem 'haml'
 gem "cocoon"
 gem "cancan"
 gem 'public_activity'
 gem 'mail_form'
+
+gem 'html2haml'
+
+gem 'gridstack-js-rails'
+gem 'jquery-ui-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

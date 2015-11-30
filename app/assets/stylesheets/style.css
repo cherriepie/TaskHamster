@@ -1,0 +1,25 @@
+body{
+	background-color: #f7f7f9;
+	padding-top: 50px;
+}
+
+.icon-large{
+	font-size: 30px;
+}
+
+.success{
+	color: #3c763d
+}
+
+.list-group-item.item-success{
+	color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d0e9c6;
+}
+
+.list-group-item.item-warning{
+	color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faf2cc;
+
+}
