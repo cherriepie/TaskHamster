@@ -25,5 +25,7 @@ module TaskHamster
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
     config.time_zone = "Pacific Time (US & Canada)"
+
+    config.serve_static_assets = true
   end
 end
