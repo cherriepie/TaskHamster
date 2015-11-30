@@ -11,4 +11,6 @@ class Task < ActiveRecord::Base
 	def overdue?
 		!deadline.blank? && deadline > Date.today && completed_at.blank?
 	end
+
+
 end

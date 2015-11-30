@@ -1,7 +1,8 @@
 .row
   %p#notice= notice
 .row
-  %button.btn.btn-primary{:onclick=> "switchView()"} Switch View
+  %a.icon.icon-documents.icon-large{:onclick=> "switchView()"} swtich view
+
 .row#v1
   =render 'card_view_v1'
 .row#v2{:style=>"display:none;"}
