@@ -2,6 +2,7 @@ body{
 	background-color: #f7f7f9;
 	padding-top: 50px;
 }
+
 a, a:hover{
  color: inherit;
 }
@@ -9,11 +10,10 @@ a, a:hover{
 a.icon{
     cursor: -webkit-grab;
 }
+
 .icon-large{
 	font-size: 30px;
 }
-
-
 
 .success{
 	color: #3c763d
