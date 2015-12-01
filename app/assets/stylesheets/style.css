@@ -4,6 +4,10 @@ body{
     padding-bottom:61px;
 }
 
+.inline{
+    display:inline-block;
+}
+
 a, a:hover{
  color: inherit;
 }

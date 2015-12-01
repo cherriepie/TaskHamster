@@ -3,8 +3,12 @@
   %strong Name:
   = @task.name
 %p
-  %strong Status:
-  = @task.status
+  %strong Description:
+  =@task.description
+%p
+  %strong Hour:
+  =@task.reported_hour
+
 
 = link_to 'Complete', complete_task_path(@task), method: :patch 
 

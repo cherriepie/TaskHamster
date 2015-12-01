@@ -11,3 +11,8 @@
 	color:#3c763d;
 }
 
+.task-description{
+	border-top:0.0625rem solid;
+	border-color:inherit;
+	margin-top:10px;
+}

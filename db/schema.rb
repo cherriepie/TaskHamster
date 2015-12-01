@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151129091556) do
+ActiveRecord::Schema.define(version: 20151201215108) do
 
   create_table "projects", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -21,13 +21,15 @@ ActiveRecord::Schema.define(version: 20151129091556) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.string   "name",         limit: 255
-    t.integer  "status",       limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.integer  "project_id",   limit: 4
+    t.string   "name",          limit: 255
+    t.integer  "status",        limit: 4
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
+    t.integer  "project_id",    limit: 4
     t.datetime "completed_at"
     t.datetime "deadline"
+    t.decimal  "reported_hour",               precision: 10, scale: 2
+    t.text     "description",   limit: 65535
   end
 
   add_index "tasks", ["project_id"], name: "index_tasks_on_project_id", using: :btree
