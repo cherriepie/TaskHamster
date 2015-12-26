@@ -1,0 +1,24 @@
+%ul.list-group.completed-tasks
+  - @project.tasks.order(updated_at: :desc).each do |t|
+    -if t.completed?
+      .list-group-item.item-success
+        .icon.icon-check.alert-link.inline
+        %a{:href => task_path(t)}
+          =t.name
+        -if t.description.present?
+          %a{"aria-controls" => "#a"+t.id.to_s, "aria-expanded" => "false", "data-toggle" => "collapse", :href => "#a"+t.id.to_s, :role => "button"}
+            %small Show Description
+        .pull-right
+          -if t.reported_hour.present?
+            %span.hours
+              %strong=t.reported_hour
+              hours reported
+          %span.label.label-pill.label-success Done
+          %small.text-muted
+            Last Updated: 
+            = time_ago_in_words(t.updated_at)
+            ago
+        .collapse.task-description{:id=>"a"+t.id.to_s}
+          .well
+            =t.description
+        %div{:style => "clear:both"}

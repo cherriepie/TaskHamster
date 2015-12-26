@@ -1,63 +1,51 @@
-%ul.list-group
+%ul.list-group.tasks
   - @project.tasks.order(updated_at: :desc).each do |t|
-    -if t.completed?
-      .list-group-item.item-success
-        .icon.icon-check.alert-link.inline
-        %a{:href => task_path(t)}
-          =t.name
-        %a{"aria-controls" => "collapseExample", "aria-expanded" => "false", "data-toggle" => "collapse", :href => "#"+t.name, :role => "button"}
-          %small Show Description
-        .pull-right
-          %span.hours
-            %strong=t.reported_hour
-            hours reported
-          %span.label.label-pill.label-success Done
-          %small.text-muted
-            Last Updated: 
-            = time_ago_in_words(t.updated_at)
-            ago
-        .collapse.task-description{:id=>t.name}
-          .well
-            =t.description
-    -elsif t.overdue?
-      .list-group-item.item-danger
-        = link_to(complete_task_path(t), method: :patch) do
-          .icon.icon-emoji-happy.complete-task.alert-link.inline
-        %a{:href => task_path(t)}
-          =t.name
-        %a{"aria-controls" => "collapseExample", "aria-expanded" => "false", "data-toggle" => "collapse", :href => "#"+t.name, :role => "button"}
-          %small Show Description
-        .pull-right
-          %span.hours
-            %strong=t.reported_hour
-            hours reported
-          %span.label.label-pill.label-alert OVERDUE!
-          %small.text-muted
-            Last Updated: 
-            = time_ago_in_words(t.updated_at)
-            ago
-        .collapse.task-description{:id=>t.name}
-          .well
-            =t.description
+    -unless t.completed?
+      -if t.overdue?
+        .list-group-item.item-danger
+          = link_to(complete_task_path(t), method: :patch) do
+            .icon.icon-emoji-happy.complete-task.alert-link.inline
+          %a{:href => task_path(t)}
+            =t.name
+          -if t.description.present?
+            %a{"aria-controls" => "collapseExample", "aria-expanded" => "false", "data-toggle" => "collapse", :href => "#"+t.name, :role => "button"}
+              %small Show Description
+          .pull-right
+            -if t.reported_hour.present?
+              %span.hours
+                %strong=t.reported_hour
+                hours reported
+            %span.label.label-pill.label-alert OVERDUE!
+            %small.text-muted
+              Last Updated: 
+              = time_ago_in_words(t.updated_at)
+              ago
+          .collapse.task-description{:id=>t.name}
+            .well
+              =t.description
+          %div{:style => "clear:both"}
 
-    -else
-      .list-group-item.item-warning
-        = link_to(complete_task_path(t), method: :patch) do
-          .icon.icon-emoji-happy.complete-task.alert-link.inline
-        %a{:href => task_path(t)}
-          =t.name
-        %a{"aria-controls" => "collapseExample", "aria-expanded" => "false", "data-toggle" => "collapse", :href => "#"+t.name, :role => "button"}
-          %small Show Description
-        .pull-right
-          %span.hours
-            %strong=t.reported_hour
-            hours reported
-          %span.label.label-pill.label-warning You should get on it!
-          %small.text-muted
-            Last Updated: 
-            = time_ago_in_words(t.updated_at)
-            ago
-        .collapse.task-description{:id=>t.name}
-          .well
-            =t.description
+      -else
+        .list-group-item.item-warning
+          = link_to(complete_task_path(t), method: :patch) do
+            .icon.icon-emoji-happy.complete-task.alert-link.inline
+          %a{:href => task_path(t)}
+            =t.name
+          -if t.description.present?
+            %a{"aria-controls" => "collapseExample", "aria-expanded" => "false", "data-toggle" => "collapse", :href => "#"+t.name, :role => "button"}
+              %small Show Description
+          .pull-right
+            -if t.reported_hour.present?
+              %span.hours
+                %strong=t.reported_hour
+                hours reported
+            %span.label.label-pill.label-warning You should get on it!
+            %small.text-muted
+              Last Updated: 
+              = time_ago_in_words(t.updated_at)
+              ago
+          .collapse.task-description{:id=>t.name}
+            .well
+              =t.description
+          %div{:style => "clear:both"}
 

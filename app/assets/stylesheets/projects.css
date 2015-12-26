@@ -6,3 +6,19 @@
     margin-bottom: 28px;
 }
 
+.task-name{
+	width:80%;
+}
+
+.task-status{
+	width:8%;
+}
+
+ul.tasks {
+	padding-bottom:20px;
+
+}
+
+ul.completed-tasks{
+	padding-bottom:20px;
+}
