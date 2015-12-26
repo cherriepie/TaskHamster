@@ -9,14 +9,13 @@
     .container
       %nav.navbar.navbar-light.navbar-fixed-top.bg-faded
         .navbar-nav
-          %a.navbar-brand{:href => root_path} TaskHamster	
+          %a.header-logo{:href => root_path} TaskHamster	
           /%a.nav-link.pull-right{:href => "#{}"} 
           /  .icon.icon-cog PoopyPants
           .pull-right
-            %a.icon.icon-news.icon-large{:href => new_project_path } New Project
+            %a.icon.icon-news.header-link{:href => new_project_path } New Project
             &nbsp;&nbsp;&nbsp;
-            %a.icon.icon-circle-with-plus.icon-large{:href => new_task_path } New Task
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            %a.icon.icon-circle-with-plus.header-link{:href => new_task_path } New Task
       = yield
     .about
       %nav.navbar.navbar-light.navbar-fixed-bottom.bg-faded.nav-white.about

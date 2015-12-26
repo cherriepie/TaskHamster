@@ -1,29 +1,31 @@
-- @projects.each do |project|
-  .card.card-block.card-inverse.card-warning.project-card
-    %h4.card-title 
-      %a{:href => project_path(project)}
-        =project.name
-    %p.card-text 
-    -if project.tasks.present? 
-      -if project.open_tasks != 0
-        -unless project.overdue_tasks == 0
-          -unless project.overdue_tasks == 1 
-          %a.card-link{:href => project_path(project)} 
-            = project.overdue_tasks
-            overdue tasks
-          -else 
+.containter-wrapper
+  %ul.cards
+    - @projects.each do |project|
+      %li.card.card-block.card-inverse.card-warning.project-card
+        %h4.card-title 
+          %a{:href => project_path(project)}
+            =project.name
+        %p.card-text 
+        -if project.tasks.present? 
+          -if project.open_tasks != 0
+            -unless project.overdue_tasks == 0
+              -unless project.overdue_tasks == 1 
+                %a.card-link{:href => project_path(project)} 
+                  = project.overdue_tasks
+                  overdue tasks
+              -else 
+                %a.card-link{:href => project_path(project)} 
+                  = project.overdue_tasks
+                  overdue task
             %a.card-link{:href => project_path(project)} 
-              = project.overdue_tasks
-              overdue task
-        %a.card-link{:href => project_path(project)} 
-          = project.open_tasks
-          open tasks
-      -else
-        No open task for this project!
-    -else 
-      No task have been created!
-    %p.card-text
-      %small
-        = time_ago_in_words(project.updated_at)
-        ago
-        /= project.updated_at.strftime("%A")
+              = project.open_tasks
+              open tasks
+          -else
+            No open task for this project!
+        -else 
+          No task have been created!
+        %p.card-text
+          %small
+            = time_ago_in_words(project.updated_at)
+            ago
+            /= project.updated_at.strftime("%A")
