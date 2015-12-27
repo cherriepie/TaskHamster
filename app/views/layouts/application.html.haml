@@ -17,6 +17,8 @@
               %a.icon.icon-news.header-link{:href => new_project_path } New Project
               &nbsp;&nbsp;&nbsp;
               %a.icon.icon-circle-with-plus.header-link{:href => new_task_path } New Task
+              =link_to "sign out", destroy_user_session_path, method: :delete
+
       = yield
     .about
       %nav.navbar.navbar-light.navbar-fixed-bottom.bg-faded.nav-white.about
