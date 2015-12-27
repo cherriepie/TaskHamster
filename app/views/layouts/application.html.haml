@@ -12,10 +12,11 @@
           %a.header-logo{:href => root_path} TaskHamster	
           /%a.nav-link.pull-right{:href => "#{}"} 
           /  .icon.icon-cog PoopyPants
-          .pull-right
-            %a.icon.icon-news.header-link{:href => new_project_path } New Project
-            &nbsp;&nbsp;&nbsp;
-            %a.icon.icon-circle-with-plus.header-link{:href => new_task_path } New Task
+          -if user_signed_in?
+            .pull-right
+              %a.icon.icon-news.header-link{:href => new_project_path } New Project
+              &nbsp;&nbsp;&nbsp;
+              %a.icon.icon-circle-with-plus.header-link{:href => new_task_path } New Task
       = yield
     .about
       %nav.navbar.navbar-light.navbar-fixed-bottom.bg-faded.nav-white.about

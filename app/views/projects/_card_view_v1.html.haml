@@ -36,6 +36,6 @@
                   = link_to(complete_task_path(t), method: :patch) do
                     .icon.icon-emoji-happy.complete-task.alert-link.pull-right
           -else 
-            No tasks have been created!
-        .card-footer.text-muted
-          
+            %li.list-group-item.alert-warning
+              No tasks have been created!
+        

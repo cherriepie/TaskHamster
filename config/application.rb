@@ -26,6 +26,7 @@ module TaskHamster
 
     config.time_zone = "Pacific Time (US & Canada)"
 
-    config.serve_static_assets = true
+    #config.serve_static_assets = true
+    config.serve_static_files = true
   end
 end

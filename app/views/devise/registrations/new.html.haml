@@ -1,0 +1,13 @@
+
+= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = f.error_notification
+  .form-signin
+    %h2.form-signin-header Sign Up
+    = f.input :email, required: true, autofocus: true, label: false, placeholder: "Email"
+    = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), label: false, placeholder: "Password"
+    = f.input :password_confirmation, required: true, label: false, placeholder: "Password Confirmation"
+    = f.button :submit, "Sign up", :class=> "btn btn-lg btn-warning btn-block"
+    %hr
+    .text-center
+      =link_to "Already have an account? Sign in now!", new_session_path(resource_name) 
+    /= render "devise/shared/links"

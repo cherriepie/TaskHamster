@@ -6,7 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` on Rails 4+ applications as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '948b95986c330e7eb62c4bd0e54b9071ddc8f076786fbedf73b489749eac8c0ee2adb82596855cc583d767b39b7bce37c651f5934d8a1748d7c2abc533c3c410'
+  # config.secret_key = 'c6824de6d8453320467b1bd7f183177c3149189d0645e6973a95cea5be3a2243d9c823c2b14712100a080ea6e11818ccae5101de69873d145e09516d497b913e'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -99,7 +99,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = '95c7aab918f383be8197afef2c99a0c7481d18c6dcb79a2b481e38b7b45cf650fde53e1ff797d92c9e020cddf675772ae2d2de3c8dc5f0412dfd90e3451e0cf8'
+  # config.pepper = 'd41ab504b4a382c50beeecd091ff07016d0ff8e8be6c7027f66f4b22cf4bbfcff16f13ab38585ebd0fdc585d0a9ed62ca2bcb56ec3a9da4ad69a6596d2c7287b'
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -259,7 +259,4 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
-
-  config.secret_key = '1f4f0de5fb0ea636739e9e830e9f1e03e0b6ba7df03e9e17826e605a3d733196dde880cf1ad180bf295b1c712ad0c48abfe41c648b47e07aaf6ea3bada6275b4'
-
 end
