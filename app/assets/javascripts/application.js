@@ -15,5 +15,6 @@
 //= require turbolinks
 //= require_tree .
 //= require gridstack-js-rails
+//= require tether.min.js
 //= require bootstrap
 

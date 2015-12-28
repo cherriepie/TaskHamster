@@ -13,14 +13,15 @@
           /%a.nav-link.pull-right{:href => "#{}"} 
           /  .icon.icon-cog PoopyPants
           -if user_signed_in?
-            .pull-right  
+            .pull-right
               .icon.icon-log-out.header-link
                 =link_to "sign out", destroy_user_session_path, method: :delete
               /%a.icon.icon-log-out.header-link{:href => destroy_user_session_path, :"data-method" => "delete" } Log Out
             .pull-right
-              %a.icon.icon-circle-with-plus.header-link{:href => new_project_path } Project
-              &nbsp;
-              %a.icon.icon-circle-with-plus.header-link{:href => new_task_path } Task              
+              /%a.icon.icon-circle-with-plus.header-link{:href => new_project_path } Project
+              %a.icon.icon-circle-with-plus.header-link{"data-container" => "body", "data-content" => "#{render 'projects/new_project'}", "data-placement" => "bottom", "data-toggle" => "popover", :type => "button", "data-html"=>"true"}
+                Project
+              /%a.icon.icon-circle-with-plus.header-link{:href => new_task_path } Task              
               &nbsp;&nbsp;
       = yield
     .about
@@ -28,3 +29,7 @@
         .pull-right
           %a.about{:href=>static_pages_about_path} What is TaskHamster?
 
+:javascript
+  $(function () {
+    $('[data-toggle="popover"]').popover()
+  })
