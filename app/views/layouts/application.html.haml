@@ -13,13 +13,15 @@
           /%a.nav-link.pull-right{:href => "#{}"} 
           /  .icon.icon-cog PoopyPants
           -if user_signed_in?
+            .pull-right  
+              .icon.icon-log-out.header-link
+                =link_to "sign out", destroy_user_session_path, method: :delete
+              /%a.icon.icon-log-out.header-link{:href => destroy_user_session_path, :"data-method" => "delete" } Log Out
             .pull-right
               %a.icon.icon-circle-with-plus.header-link{:href => new_project_path } Project
               &nbsp;
-              %a.icon.icon-circle-with-plus.header-link{:href => new_task_path } Task
-              /=link_to "sign out", destroy_user_session_path, method: :delete
-              &nbsp;
-              %a.icon.icon-log-out.header-link{:href => destroy_user_session_path, :"data-method" => "delete" } Log Out
+              %a.icon.icon-circle-with-plus.header-link{:href => new_task_path } Task              
+              &nbsp;&nbsp;
       = yield
     .about
       %nav.navbar.navbar-light.navbar-fixed-bottom.bg-faded.nav-white.about
