@@ -1,7 +1,7 @@
 = simple_form_for(Project.new) do |f|
   = f.error_notification
   .form-inputs
-    = f.input :name
+    = f.input :name, label: false, placeholder: "Project Name"
     /= f.input :status
-  .form-actions
-    = f.button :submit
+  .form-actions.text-right
+    = f.button :submit, :class => "btn btn-warning-outline"
