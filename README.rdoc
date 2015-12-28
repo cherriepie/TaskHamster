@@ -14,7 +14,7 @@ TaskHamster is a small project management rails app.
 
   Empowered by bootstrap 4 Alpha, devise and simple_form by Plataformatec.
 
-Demo site: tashamster.herokuapp.com
+Demo site: http://taskhamster.herokuapp.com/
 
 == CREDIT
 Thanks Sercypher for the witty name. ;)

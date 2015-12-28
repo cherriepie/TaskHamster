@@ -1,7 +1,7 @@
 = simple_form_for(@task) do |f|
   = f.error_notification
   .form-inputs
-    = f.association :project
+    = f.association :project, collection: current_user.projects.order(:name)
     = f.input :name
     = f.input :description
     = f.input :reported_hour
