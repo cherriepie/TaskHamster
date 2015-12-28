@@ -1,28 +1,20 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+About TaskHamster
 
-Things you may want to cover:
+(This project is currently under construction!) 
+TaskHamster is a small project management rails app. 
 
-* Ruby version
+* Ruby 2.2.1p85 (2015-02-26 revision 49769) [x86_64-darwin15]
+
+* Rails 4.2.5
 
 * System dependencies
+  Empowered by bootstrap 4.0, devise and simple forms. 
 
-* Configuration
+Heroku site:
+tashamster.herokuapp.com
 
-* Database creation
+== CREDIT
+Thanks Sercypher for the witty name. ;)
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.

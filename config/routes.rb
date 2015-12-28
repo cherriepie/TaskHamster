@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     end
   end
 
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
+
   get 'static_pages/about'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

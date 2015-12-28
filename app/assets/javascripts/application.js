@@ -16,3 +16,4 @@
 //= require_tree .
 //= require gridstack-js-rails
 //= require bootstrap
+
