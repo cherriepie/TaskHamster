@@ -3,6 +3,7 @@
 About TaskHamster
 
 (This project is currently under construction!) 
+
 TaskHamster is a small project management rails app. 
 
 * Ruby 2.2.1p85 (2015-02-26 revision 49769) [x86_64-darwin15]
@@ -10,10 +11,10 @@ TaskHamster is a small project management rails app.
 * Rails 4.2.5
 
 * System dependencies
-  Empowered by bootstrap 4.0, devise and simple forms. 
 
-Heroku site:
-tashamster.herokuapp.com
+  Empowered by bootstrap 4 Alpha, devise and simple_form by Plataformatec.
+
+Demo site: tashamster.herokuapp.com
 
 == CREDIT
 Thanks Sercypher for the witty name. ;)
