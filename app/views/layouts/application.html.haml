@@ -9,10 +9,11 @@
     .container
       %nav.navbar.navbar-light.navbar-fixed-top.bg-faded
         .navbar-nav
-          %a.header-logo{:href => root_path} TaskHamster	
+          %a.navbar-brand{:href => root_path} TaskHamster	
           /%a.nav-link.pull-right{:href => "#{}"} 
           /  .icon.icon-cog PoopyPants
           -if user_signed_in?
+            %a.btn.btn-warning-outline{:href => projects_path} My Projects
             .pull-right
               .icon.icon-log-out.header-link
                 =link_to "sign out", destroy_user_session_path, method: :delete

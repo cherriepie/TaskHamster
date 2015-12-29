@@ -2,6 +2,8 @@ class Project < ActiveRecord::Base
 	belongs_to :user
 	has_many :tasks
 
+	validates :name, :presence => true
+
 	def completed_tasks
 		Task.where(:project_id => self.id).where('completed_at IS NOT NULL').count
 	end

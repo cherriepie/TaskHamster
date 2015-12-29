@@ -30,7 +30,7 @@ class ProjectsController < ApplicationController
     
     respond_to do |format|
       if @project.save
-        format.html { redirect_to @project, notice: 'Project was successfully created.' }
+        format.html { redirect_to @project, notice: '' }
         format.json { render :show, status: :created, location: @project }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class ProjectsController < ApplicationController
   def update
     respond_to do |format|
       if @project.update(project_params)
-        format.html { redirect_to @project, notice: 'Project was successfully updated.' }
+        format.html { redirect_to @project, notice: '' }
         format.json { render :show, status: :ok, location: @project }
       else
         format.html { render :edit }
@@ -71,6 +71,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:name, :status, :user_id)
+      params.require(:project).permit(:name, :status, :user_id, :project_id)
     end
 end

@@ -1,0 +1,11 @@
+= simple_form_for(Task.new) do |f|
+  = f.error_notification
+  .form-inputs
+    =f.hidden_field :project_id, :value => @project.id
+    /= f.association :project, :selected => @project, collection: current_user.projects.order(:name)
+    = f.input :name, label: false, placeholder: "Task Name"
+    = f.input :description, label: false, placeholder: "Edit the description..."
+    /= f.input :reported_hour
+  .form-actions
+    = f.button :submit, :class => "btn btn-info-outline"
+    

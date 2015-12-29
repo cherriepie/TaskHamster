@@ -1,3 +1,4 @@
+%h5 Completed Tasks
 %ul.list-group.completed-tasks
   - @project.tasks.order(updated_at: :desc).each do |t|
     -if t.completed?

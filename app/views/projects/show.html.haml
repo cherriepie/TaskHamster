@@ -1,18 +1,18 @@
 %p#notice= notice
-.row
-  .pull-left
-    = link_to(projects_path) do
-      .icon.icon-arrow-bold-left.pull-right to All Projects
-
 %h3.text-center=@project.name
-%h5 Current Tasks
-=render 'project_tasks'
+.row
+  .col-sm-2
+    .project-options-sidebar
+      .btn-group-vertical
+        %a.btn.btn-info-outline{"data-container" => "body", "data-content" => "#{render 'tasks/new_task'}", "data-placement" => "right", "data-toggle" => "popover", :type => "button", "data-html"=>"true"}
+          New Task
+        %a.btn.btn-info-outline Add Member
+        = link_to 'Delete Project', @project, method: :delete, data: { confirm: 'Are you sure?' },  :class=>"btn btn-danger-outline"
 
-%h5 Completed Tasks
-=render 'project_completed_tasks'
+  .col-sm-10
+    =render 'project_tasks'
+    =render 'project_completed_tasks'
 
-
-= link_to 'Edit', edit_project_path(@project)      
-= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' }
+/= link_to 'Edit', edit_project_path(@project)      
 
 
