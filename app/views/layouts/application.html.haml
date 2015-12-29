@@ -25,7 +25,7 @@
               .dropdown
                 .btn.btn-secondary.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
                   %i.fa.fa-user
-                  =@current_user.name
+                  /=@current_user.name
                 .dropdown-menu{"aria-labelledby" => "dropdownMenu1"}
                   .dropdown-item
                     =link_to "sign out", destroy_user_session_path, method: :delete
