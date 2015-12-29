@@ -6,17 +6,31 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+    #fb-root
+      :javascript
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=810456092397474";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
     .container
       %nav.navbar.navbar-light.navbar-fixed-top.bg-faded{:style => "background-color:#f0ad4e"}
         .navbar-nav
           %a.navbar-brand{:href => root_path} TaskHamster	
-          /%a.nav-link.pull-right{:href => "#{}"} 
-          /  .icon.icon-cog PoopyPants
           -if user_signed_in?
             %a.btn.btn-secondary{:href => projects_path} My Projects
             .pull-right
-              .icon.icon-log-out.header-link
-                =link_to "sign out", destroy_user_session_path, method: :delete
+              .dropdown
+                .btn.btn-secondary.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+                  %i.fa.fa-user
+                  =@current_user.name
+                .dropdown-menu{"aria-labelledby" => "dropdownMenu1"}
+                  .dropdown-item
+                    =link_to "sign out", destroy_user_session_path, method: :delete
+
+                
               /%a.icon.icon-log-out.header-link{:href => destroy_user_session_path, :"data-method" => "delete" } Log Out
             .pull-right
               /%a.icon.icon-circle-with-plus.header-link{:href => new_project_path } Project

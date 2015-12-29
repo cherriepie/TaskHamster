@@ -7,7 +7,8 @@
     = f.button :submit, "Log in", :class => 'btn btn-lg btn-warning btn-block' 
     %hr
     .text-center
-      /=link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)
+      %a.btn.btn-primary-outline{:href=>user_omniauth_authorize_path(:facebook)} Sign in with Facebook 
+      %hr
       = render "devise/shared/links"
 
 

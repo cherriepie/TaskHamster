@@ -1,5 +1,9 @@
-.row
-  %p#notice= notice
+-if notice.present?
+  .alert.alert-info.alert-dismissible.fade.in{:role => "alert"}
+    %button.close{"aria-label" => "Close", "data-dismiss" => "alert", :type => "button"}
+      %span{"aria-hidden" => "true"} &times;
+    = notice
+ 
 -if @projects.present?
   .row
     .pull-right
